@@ -20,6 +20,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
-app.get('/', getCourses);
+app.get('/api/courses', getCourses);
 
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));
