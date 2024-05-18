@@ -43,6 +43,7 @@ const getCourses = async (req, res) => {
         res.json(courses).status(200);
     } catch (error) {
         res.status(400);
+        console.error(error)
     }
 };
 
