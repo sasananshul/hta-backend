@@ -5,6 +5,7 @@ const getCourses = async (req, res) => {
         const filters = req.query;
         const filterQuery = {};
 
+        console.log('Chekpoint0')
         if (filters.universityName.trim()) {
             const regex = new RegExp(filters.universityName, 'i')
             filterQuery.universityName = regex;
