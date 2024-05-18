@@ -37,7 +37,7 @@ const getCourses = async (req, res) => {
 
         // const courses = await Course.find(filterQuery).lean();
 
-        res.json('courses').status(200);
+        res.send('courses').status(200);
     } catch (error) {
         res.status(400);
     }
