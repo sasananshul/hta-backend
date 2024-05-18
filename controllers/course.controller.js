@@ -2,6 +2,9 @@ const { Course } = require('../models/course.schema');
 
 const getCourses = async (req, res) => {
     try {
+
+        res.send('Hello WOrld!!');
+       return; 
         const filters = req.query;
         const filterQuery = {};
 
