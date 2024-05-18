@@ -35,9 +35,9 @@ const getCourses = async (req, res) => {
             filterQuery.tuitionFee = { ...filterQuery.tuitionFee, $lte: filters.maxFee };
         }
 
-        const courses = await Course.find(filterQuery).lean();
+        // const courses = await Course.find(filterQuery).lean();
 
-        res.json(courses).status(200);
+        res.json('courses').status(200);
     } catch (error) {
         res.status(400);
     }
