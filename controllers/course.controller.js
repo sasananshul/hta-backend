@@ -35,7 +35,9 @@ const getCourses = async (req, res) => {
             filterQuery.tuitionFee = { ...filterQuery.tuitionFee, $lte: filters.maxFee };
         }
 
+        console.log('Checkpoint 1')
         const courses = await Course.find(filterQuery).lean();
+        console.log('Checkpoint 2')
 
         res.json(courses).status(200);
     } catch (error) {
