@@ -2,9 +2,6 @@ const { Course } = require('../models/course.schema');
 
 const getCourses = async (req, res) => {
     try {
-
-        res.send('Hello WOrld!!');
-       return; 
         const filters = req.query;
         const filterQuery = {};
 
@@ -38,9 +35,9 @@ const getCourses = async (req, res) => {
             filterQuery.tuitionFee = { ...filterQuery.tuitionFee, $lte: filters.maxFee };
         }
 
-        // const courses = await Course.find(filterQuery).lean();
+        const courses = await Course.find(filterQuery).lean();
 
-        res.send('courses').status(200);
+        res.json(courses).status(200);
     } catch (error) {
         res.status(400);
     }
